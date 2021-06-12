@@ -28,17 +28,7 @@ class StoreUserRequest extends FormRequest
             ],
             'password' => [
                 'required',
-                'confirmed',
                 'min:6'
-            ],
-            'password_confirmation' => [
-                'required',
-                'min:6'
-            ],
-            'phone' => [
-                'required',
-                'regex:/^([0-9\s\-\+\(\)]*)$/','min:10',
-                'unique:users',
             ],
             'roles.*'  => [
                 'integer',

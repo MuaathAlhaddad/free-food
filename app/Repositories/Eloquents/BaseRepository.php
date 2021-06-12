@@ -48,7 +48,7 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function create(array $attributes): Response
     {
-        if ($attributes['password']) {
+        if (isset ( $attributes['password'])) {
             $attributes['password'] = Hash::make($attributes['password']);
         }
 
@@ -59,7 +59,7 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function createAndSync(array $attributes, string $relation): Response
     {
-        if ($attributes['password']) {
+        if(isset ( $attributes['password'])) {
             $attributes['password'] = Hash::make($attributes['password']);
         }
 
@@ -72,7 +72,7 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function createAndAssociate(array $attributes, string $relation): Response
     {
-        if ($attributes['password']) {
+        if (isset ( $attributes['password'])) {
             $attributes['password'] = Hash::make($attributes['password']);
         }
 
