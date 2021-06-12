@@ -9,6 +9,7 @@ use Illuminate\Http\Response;
 use Illuminate\Pagination\LengthAwarePaginator;
 use \App\Repositories\Interfaces\EloquentRepositoryInterface;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use App\Helpers\FormatData;
 
@@ -47,6 +48,10 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function create(array $attributes): Response
     {
+        if ($attributes['password']) {
+            $attributes['password'] = Hash::make($attributes['password']);
+        }
+
         $this->model->create($attributes);
 
         return response($this->getClassName($this->model) . ' created Successfully', SymfonyResponse::HTTP_OK);
@@ -54,6 +59,10 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function createAndSync(array $attributes, string $relation): Response
     {
+        if ($attributes['password']) {
+            $attributes['password'] = Hash::make($attributes['password']);
+        }
+
         $model  = $this->model->create($attributes);
 
         $model->$relation()->sync($attributes[$relation] ?? []);
@@ -63,6 +72,10 @@ class BaseRepository implements EloquentRepositoryInterface
 
     public function createAndAssociate(array $attributes, string $relation): Response
     {
+        if ($attributes['password']) {
+            $attributes['password'] = Hash::make($attributes['password']);
+        }
+
         $model  = $this->model->create($attributes);
 
         $model->$relation()->associate($attributes[$relation] ?? null);

@@ -32,11 +32,11 @@
                                 <label class="form-control-label" for="input-email">{{ __('Email') }}</label>
                                 <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Email') }}" value="{{ old('email') }}" required>
 
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
+                                @error('email')
+                                    <small class="text-danger">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
                             </div>
 
                         </div>
@@ -44,45 +44,20 @@
                     <div class="row">
                         {{-- Password --}}
                         <div class="col">
-                            <div id="password-group" class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-                                <label class="form-control-label" for="input-password">{{ __('Password') }}</label>
-                                <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Password') }}" required>
+                            <div id="password-group" class="form-group @error('password') has-danger @enderror ">
+                                <label class="form-control-label @error('password') border border-danger @enderror" for="input-password">{{ __('Password') }}</label>
+                                <input type="password" name="password" id="input-password" class="form-control form-control-alternative{@error('password') border border-danger @enderror " placeholder="{{ __('Password') }}" required>
 
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password') }}</strong>
-                            </span>
-                                @endif
-                            </div>
-                        </div>
-                        {{-- password_confirmation --}}
-                        <div class="col">
-                            <div id="password_confirmation-group" class="form-group{{ $errors->has('password_confirmation') ? ' has-danger' : '' }}">
-                                <label class="form-control-label" for="input-password_confirmation">{{ __('Confirm New Password') }}</label>
-                                <input type="password" name="password_confirmation" id="input-password_confirmation" class="form-control form-control-alternative{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" placeholder="{{ __('Confirm New Password') }}" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="invalid-feedback" role="alert">
-                                <strong>{{ $errors->first('password_confirmation') }}</strong>
-                            </span>
-                                @endif
+                                @error('password')
+                                    <small class="text-danger">
+                                        {{ $message }}
+                                    </small>
+                                @enderror
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        {{-- phone --}}
-                        <div class="col">
-                                <div id="phone-group" class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
-                                    <label class="form-control-label" for="input-phone">{{ __('Phone No') }}</label>
-                                    <input type="text" name="phone" id="input-phone" class="form-control form-control-alternative{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="{{ __('Phone') }}" value="{{ old('phone') }}"  required>
 
-                                    @if ($errors->has('phone'))
-                                        <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('phone') }}</strong>
-                                                </span>
-                                    @endif
-                                </div>
-                        </div>
                         {{-- User Role --}}
                         <div class="col">
                             <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">

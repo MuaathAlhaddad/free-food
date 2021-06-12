@@ -34,20 +34,8 @@
         </div>
 
         <div class="row">
-            {{-- Phone --}}
-            <div class="col-md-6">
-                <div id="phone-group" class="form-group{{ $errors->has('phone') ? ' has-danger' : '' }}">
-                    <label class="form-control-label" for="input-phone">Phone Number</label>
-                    <input type="text" name="phone" id="input-phone" value="{{ $user->phone }}" class="form-control form-control-alternative{{ $errors->has('phone') ? ' is-invalid' : '' }}" placeholder="Phone Number">
-                    @if ($errors->has('phone'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('phone') }}</strong>
-                        </span>
-                    @endif
-                </div>
-            </div>
             {{-- User Role --}}
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="form-group {{ $errors->has('roles') ? 'has-error' : '' }}">
                     <label for="user-role" class="form-control-label">{{__('User Role')}}*</label>
                     <select class="form-control form-control-alternative select2" name="roles[]" id="input-user-role"

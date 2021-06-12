@@ -116,6 +116,9 @@ class RolesAndPermissionsSeeder extends Seeder
         $role = Role::create(['name' => 'user'])
             ->givePermissionTo(['profile_edit', 'users_avatar_update']);
 
+        // Butcher Role
+        $role = Role::create(['name' => 'butcher'])
+            ->givePermissionTo(['profile_edit', 'users_avatar_update']);
 
         /**************************************
          * Create Users and assign Roles
@@ -124,16 +127,22 @@ class RolesAndPermissionsSeeder extends Seeder
         $user = User::create([
             'name' => 'admin',
             'email' => 'admin@example.com',
-            'phone' => '0123456789',
             'password' => Hash::make('password')
         ]);
         $user->assignRole('admin');
 
-        //User 2
+        //User
         $user = User::create([
             'name' => 'user',
             'email' => 'user@example.com',
-            'phone' => '0198765432',
+            'password' => Hash::make('password')
+        ]);
+        $user->assignRole('user');
+
+        //Butcher
+        $user = User::create([
+            'name' => 'butcher',
+            'email' => 'butcher@example.com',
             'password' => Hash::make('password')
         ]);
         $user->assignRole('user');

@@ -39,12 +39,6 @@
             <td>
                 {{ $user->created_at->format('Y-m-d')  ?? ''}}
             </td>
-            <th class="border-left">
-                Phone Number
-            </th>
-            <td>
-                {{ $user->phone ?? ''}}
-            </td>
         </tr>
     </tbody>
 </table>
