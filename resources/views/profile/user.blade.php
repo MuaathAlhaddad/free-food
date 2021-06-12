@@ -257,7 +257,7 @@
 
                 $('#img-link').on('click', function (e) {
                     e.preventDefault();
-                    alert('hi');
+
                     $('#imgupload').click();
                 });
                 $('#imgupload').on('change', function () {
