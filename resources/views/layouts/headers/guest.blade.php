@@ -3,7 +3,7 @@
         <div class="header-body text-center mb-7">
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-md-8">
-                    <h1 class="text-white">{{ __('Welcome to '. config("app.name", "Laravel").' Dashboard.') }}</h1>
+                    <h1 class="text-white">{{ __('Welcome to '. config("app.name", "Laravel").' System.') }}</h1>
                 </div>
             </div>
         </div>

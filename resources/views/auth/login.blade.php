@@ -9,7 +9,7 @@
                     <div class="card-header bg-transparent">
                         <div class="btn-wrapper text-center">
                             <span class="btn-inner--icon">
-                                <img src="{{ asset('argon') }}/img/icons/common/Howdy - LOGO.png" width="100" height="100">
+                                <img src="{{ asset('argon') }}/img/icons/common/logo.png" width="100" height="100">
                             </span>
                         </div>
                     </div>

@@ -75,7 +75,7 @@
                                                 {{ $permission->name ?? '' }}
                                             </td>
                                             <td class="text-lowercase">
-                                                {{ $permission->created_at->format('Y-m-d') }}
+                                                {{ $permission->created_at->format('Y-m-d h:i:s') }}
                                             </td>
                                             <td>
                                                 @can('permission_edit')
