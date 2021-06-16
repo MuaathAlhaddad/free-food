@@ -24,6 +24,9 @@
         <!-- Default styling for DataTable -->
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTable.css') }}">
 
+        {{--   Vuejs     --}}
+        <script src="{{ asset('js/app.js') }}" defer></script>
+
     </head>
     <body class="{{ $class ?? '' }}">
         @auth()
@@ -35,7 +38,7 @@
             @endcan
         @endauth
 
-        <div class="main-content">
+        <div class="main-content" id="app">
             @auth
                 @include('layouts.navbars.navbar')
             @endauth
