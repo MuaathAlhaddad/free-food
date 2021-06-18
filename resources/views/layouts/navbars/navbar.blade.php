@@ -45,9 +45,9 @@
                         <i class="ni ni-calendar-grid-58"></i>
                         <span>{{ __('Activity') }}</span>
                     </a>
-                    <a href="#" class="dropdown-item">
+                    <a href="{{  route('products.index') }}" class="dropdown-item">
                         <i class="ni ni-support-16"></i>
-                        <span>{{ __('Support') }}</span>
+                        <span>{{ __('Website') }}</span>
                     </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
