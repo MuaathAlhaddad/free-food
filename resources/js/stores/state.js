@@ -109,7 +109,22 @@ export default ({
             isAddedBtn: false,
             isFavourite: false,
             quantity: 1
-        }
+        },
+        {
+            id: 10,
+            title: 'Brisket',
+            description: 'Brisket is a large cut of beef coming from the breast. Least tender cuts of beef, but fret not, you can soften the meat by braised, smoked, or roasted.',
+            weight: '180 – 200gram',
+            type: 'Australian',
+            img: 'butcherybrothers-product-beef-v2-striploin.jpg',
+            price: 50,
+            ratings: 3,
+            reviews: 5,
+            isAddedToCart: false,
+            isAddedBtn: false,
+            isFavourite: false,
+            quantity: 1
+        },
     ],
     userInfo: {
         isLoggedIn: false,
