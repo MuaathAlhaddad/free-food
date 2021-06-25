@@ -4,7 +4,7 @@
         <div class="row mb-2">
             <div class="col-md-12">
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-alternative" style="border-radius: 20px;" placeholder="Input Meat Code here ...">
+                    <input type="text" class="form-control form-control-alternative" style="border-radius: 25px; text-align: center;" placeholder="Input Meat Code here ...">
                 </div>
             </div>
         </div>
