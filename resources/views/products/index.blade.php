@@ -22,8 +22,7 @@
                     @endif
 
                         {{--        Products       --}}
-                    <products-index></products-index>
-
+                    <router-view />
 
                 </div>
             </div>

@@ -24,6 +24,10 @@ Route::get('/home', function () {
 
 Auth::routes();
 
+// this overrides the route on resource route group.
+Route::get('products/{id}', 'ProductController@index');
+
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions

@@ -1,33 +1,34 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router';
-import products_show from "./pages/products-show.vue";
+import Router from 'vue-router';
+import ProductsShow from "./pages/products-show.vue";
+import ProductsIndex from "./pages/products-index.vue";
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
 
-export const router = {
-    mode: 'history',
-    base: decodeURI('/'),
-    linkActiveClass: 'nuxt-link-active',
-    linkExactActiveClass: 'nuxt-link-exact-active',
+export default new Router({
+            mode: 'history',
+            // base: decodeURI('/'),
+            // linkActiveClass: 'nuxt-link-active',
+            // linkExactActiveClass: 'nuxt-link-exact-active',
 
-    routes: [
-        {
-            path: "/user/wishlist",
-            component: _0f5a94d3,
-            name: "user-wishlist"
-        },
-        {
-            path: "/products/:id?",
-            component: product_show,
-            name: "products_show"
-        },
-        {
-            path: "/",
-            component: _eaf173ce,
-            name: "index"
-        }
-    ],
+            routes: [
+                // {
+                //     path: "/user/wishlist",
+                //     component: _0f5a94d3,
+                //     name: "user-wishlist"
+                // },
+                {
+                    path: "/products",
+                    component: ProductsIndex,
+                    name: "products_index"
+                },
+                {
+                    path: "/products/:id?",
+                    component: ProductsShow,
+                    name: "products_show"
+                },
+            ],
 
-    fallback: false
-}
+            fallback: false
+        });

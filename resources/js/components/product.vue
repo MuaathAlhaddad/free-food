@@ -5,8 +5,22 @@
 
         <div class="card-body ">
             <div class="row justify-content-between">
-                <div class="col-sm-10">
-                    <h2 class="display-4 card-title p-0 m-0 text-left">{{ product.title }}</h2>
+                <div class="col-sm-10 text-left pl-0">
+                    <router-link
+                        class="display-4 card-title p-0 m-0 text-left"
+                        :to="{
+                                name: 'products_show',
+                                params: {
+                                    id: product.id,
+                                    title: product.title,
+                                    price: product.price,
+                                    rating: product.ratings,
+                                    reviews: product.reviews,
+                                    isAddedBtn: product.isAddedBtn
+                                }
+                        }">
+                        {{ product.title }}
+                    </router-link>
                 </div>
                 <div class="col-sm-2">
                     <a href="#" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click.prevent="saveToFavorite(product.id)">
@@ -50,20 +64,6 @@
                     <button class="btn btn-block btn-danger" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</button>
                 </div>
             </div>
-        <router-link
-            class="details"
-            :to="{
-                    name: 'products_show',
-                    params: {
-                          id: product.id,
-                          title: product.title,
-                          price: product.price,
-                          rating: product.ratings,
-                          reviews: product.reviews,
-                          isAddedBtn: product.isAddedBtn
-                        }
-                    }">
-        </router-link>
     </div>
 </template>
 
