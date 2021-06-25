@@ -1,78 +1,81 @@
 <template>
-    <div class="container">
+    <section>
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <router-link :to="{ name: 'products_index'}">
+                                Products
+                            </router-link>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Product Show</li>
+                    </ol>
+                </nav>
+            </div>
 
-        <div class="section">
-        </div>
-        <div class="card is-clearfix columns">
-            <figure class="card-image is-480x480 column is-one-thirds">
-                <img src="https://bulma.io/images/placeholders/480x480.png">
-            </figure>
-            <div class="card-content column is-two-thirds">
-                <div class="card-content__title">
-                    <h2 class="title is-4">{{ product.title }}
-                        <button class="button is-small" :title="removeFromFavouriteLabel" v-show="product.isFavourite" @click="removeFromFavourite(product.id)">
-                  <span class="icon is-small">
-                    <i class="fa fa-heart"></i>
-                  </span>
-                        </button>
-                        <button class="button is-small" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click="saveToFavorite(product.id)">
-                  <span class="icon is-small">
-                    <i class="fa fa-heart-o"></i>
-                  </span>
-                        </button>
-                    </h2>
+            <div class="row mt-2 border border-dark p-4 rounded">
+                <div class="col-sm-5">
+                    <img src="https://via.placeholder.com/400">
                 </div>
-                <div class="card-content__text">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Ut enim ad minim veniam, quis nostrud
-                    </p>
-                </div>
-                <div class="card-content__ratings" v-if="product.rating === 1">
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="card-content__ratings" v-else-if="product.rating === 2">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="card-content__ratings" v-else-if="product.rating === 3">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="card-content__ratings" v-else-if="product.rating === 4">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="card-content__ratings" v-else-if="product.rating === 5">
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                    <i class="fa fa-star"></i>
-                </div>
-                <div class="card-content__reviews">
-                    <div class="is-pulled-left">
-                        <p><strong>{{ product.reviews > 0 ? `${product.reviews} Reviews` : 'No reviews' }}</strong></p>
+
+                <div class="col-sm-7">
+                    <div class="row">
+                        <div class="col-sm-10 display-3">
+                            {{ product.title }}
+                        </div>
+                        <div class="col-sm-2">
+                            <a href="#" :title="addToFavouriteLabel" v-show="!product.isFavourite" @click.prevent="saveToFavorite(product.id)">
+                                <i class="far fa-heart text-primary"></i>
+                            </a>
+                            <a href="" :title="removeFromFavouriteLabel" v-show="product.isFavourite" @click.prevent="removeFromFavourite(product.id)">
+                                <i class="fas fa-heart text-primary" ></i>
+                            </a>
+                        </div>
                     </div>
-                    <div class="select is-rounded is-small is-pulled-right">
-                        <select @change="onSelectQuantity(product.id)" v-model="selected">
-                            <option v-for="quantity in quantityArray" :value="quantity">{{ quantity }}</option>
-                        </select>
+                    <div class="row">
+                        <p>
+                            {{ product.description }}
+                        </p>
+
+                        <div class="card-content__ratings" v-if="product.rating === 1">
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="card-content__ratings" v-else-if="product.rating === 2">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="card-content__ratings" v-else-if="product.rating === 3">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="card-content__ratings" v-else-if="product.rating === 4">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <div class="card-content__ratings" v-else-if="product.rating === 5">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
                     </div>
+                    <div class="row align-items-end">
+                        <div class="col">
+                            <button class="btn btn-block btn-primary" v-if="!product.isAddedToCart" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
+                            <button class="btn btn-block btn-danger" v-if="product.isAddedToCart" @click="removeFromCart(product.id, false)">{{ removeFromCartLabel }}</button>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="card-content__price is-pulled-left">
-                    <span class="title is-3"><strong>{{ product.price }}&euro;</strong></span>
-                </div>
-                <div class="card-content__btn is-pulled-right">
-                    <button class="button is-primary" v-if="!isAddedBtn" @click="addToCart(product.id)">{{ addToCartLabel }}</button>
-                    <button class="button is-text" v-if="isAddedBtn" @click="removeFromCart(product.id)">{{ removeFromCartLabel }}</button>
-                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -162,6 +165,14 @@ export default {
         width: 100%;
         margin-bottom: 10px;
     }
+}
+.row {
+    min-height: 10rem;
+    //background-color: rgba(255,0,0,.1);
+}
+.row>.col,  .row>[class^=col-] {
+    //background-color: rgba(86,61,124,.15);
+    //border: 1px solid rgba(86,61,124,.2);
 }
 </style>
 
