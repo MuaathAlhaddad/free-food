@@ -22,7 +22,7 @@
                                     <div class="input-group-prepend @error('email') border border-danger @enderror">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control  @error('email') border border-danger @enderror" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') ??  'user@example.com'}}" required autofocus>
+                                    <input class="form-control  @error('email') border border-danger @enderror" placeholder="{{ __('Email') }}" type="email" name="email" value="{{ old('email') ??  'consumer@example.com'}}" required autofocus>
                                 </div>
                                 @error('email')
                                     <small class="text-danger">

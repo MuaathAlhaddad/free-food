@@ -112,18 +112,22 @@ class RolesAndPermissionsSeeder extends Seeder
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo(Permission::all());
 
+        // Food Provider Role
+        $role = Role::create(['name' => 'food_provider']);
+        $role->givePermissionTo(Permission::all());
+
         // User Role
-        $role = Role::create(['name' => 'user'])
+        $role = Role::create(['name' => 'consumer'])
             ->givePermissionTo(['profile_edit', 'users_avatar_update']);
 
-        // Butcher Role
-        $role = Role::create(['name' => 'butcher'])
+        // Volunteer Role
+        $role = Role::create(['name' => 'volunteer'])
             ->givePermissionTo(['profile_edit', 'users_avatar_update']);
 
         /**************************************
          * Create Users and assign Roles
          *************************************/
-        //User 1
+        //Admin User
         $user = User::create([
             'name' => 'admin',
             'email' => 'admin@example.com',
@@ -131,20 +135,28 @@ class RolesAndPermissionsSeeder extends Seeder
         ]);
         $user->assignRole('admin');
 
-        //User
+        // Food Provider User
         $user = User::create([
-            'name' => 'user',
-            'email' => 'user@example.com',
+            'name' => 'Food Provider',
+            'email' => 'food_provider@example.com',
             'password' => Hash::make('password')
         ]);
-        $user->assignRole('user');
+        $user->assignRole('food_provider');
+
+        //User
+        $user = User::create([
+            'name' => 'consumer',
+            'email' => 'consumer@example.com',
+            'password' => Hash::make('password')
+        ]);
+        $user->assignRole('consumer');
 
         //Butcher
         $user = User::create([
-            'name' => 'butcher',
-            'email' => 'butcher@example.com',
+            'name' => 'volunteer',
+            'email' => 'volunteer@example.com',
             'password' => Hash::make('password')
         ]);
-        $user->assignRole('user');
+        $user->assignRole('volunteer');
     }
 }
