@@ -27,6 +27,6 @@ class HomeController extends Controller
             return view('dashboard');
         }
 
-        return redirect()->route('products.index');
+        return redirect()->route('website');
     }
 }

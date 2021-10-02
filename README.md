@@ -6,6 +6,12 @@
 ----------------------------
 
 
+# Project routes and files structure
++ Vue instance live in products.index file.
++ vue instance is triggered by the route
++ products.index naming is wrong, because it's general for foods and voluneers index and show pages
++ The website (foods and volenteers) views are in products.index view 
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

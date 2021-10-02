@@ -1,6 +1,12 @@
 import store from '../store';
 
 export default {
+    setPosts(state, response) {
+        state.posts = response.data.data;
+    },
+    setItems(state, response) {
+        state.items = response.data.data;
+    },
     addToCart: (state, id) => {
         state.products.forEach(el => {
             if (id === el.id) {

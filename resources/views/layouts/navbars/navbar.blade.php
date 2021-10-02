@@ -45,7 +45,7 @@
 {{--                        <i class="ni ni-calendar-grid-58"></i>--}}
 {{--                        <span>{{ __('Activity') }}</span>--}}
 {{--                    </a>--}}
-                    <a href="{{  route('products.index') }}" class="dropdown-item">
+                    <a href="{{  route('website') }}" class="dropdown-item">
                         <i class="ni ni-support-16"></i>
                         <span>{{ __('Website') }}</span>
                     </a>

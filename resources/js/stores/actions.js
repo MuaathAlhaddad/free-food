@@ -1,4 +1,11 @@
 export default {
+    async getAllPosts({ commit }) {
+        return commit('setPosts', await api.get('/posts'))
+    },
+
+    async getAllItems({ commit }) {
+        return commit('setItems', await api.get('/items'))
+    },
     addToCart (id) {
         let data = {
             id: id,

@@ -24,10 +24,16 @@ Route::get('/home', function () {
 
 Auth::routes();
 
-// this overrides the route on resource route group.
-Route::get('products/{id}', 'ProductController@index');
+/**************************************************
+ * website routes
+ *************************************************/
+Route::get('website/{id}', 'WebsiteController@website');
+Route::get('website', 'WebsiteController@website')->name('website');
 
 
+/**************************************************
+ * admin routes
+ *************************************************/
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/', 'HomeController@index')->name('home');
     // Permissions
@@ -48,6 +54,4 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
-    // Products
-    Route::resource('products', 'ProductController');
 });

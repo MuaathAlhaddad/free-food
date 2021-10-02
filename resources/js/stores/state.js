@@ -1,6 +1,75 @@
 import store from '../store';
 
 export default ({
+    posts: [],
+    items: [],
+    badgeColors: [
+        'badge-default',
+        'badge-primary' ,
+        // 'badge-secondary',
+        'badge-info',
+        'badge-success',
+        // 'badge-danger',
+        'badge-warning'
+    ],
+    volunteers: [
+        {
+            id: 1,
+            name: 'ahmed ali',
+            isAvailable: true,
+            timing: 'available now',
+            contact: '01687384982',
+        },
+        {
+            id: 2,
+            name: 'Mustapha salah',
+            isAvailable: true,
+            timing: 'available now',
+            contact: '01687323482',
+        },
+        {
+            id: 3,
+            name: 'Abduallah Mod',
+            isAvailable: false,
+            timing: '1:00 PM',
+            contact: '0168234232',
+        },
+        {
+            id: 4,
+            name: 'Qasam Sorror',
+            isAvailable: false,
+            timing: '5:00 PM',
+            contact: '0333234232',
+        },
+        {
+            id: 5,
+            name: 'ahmed ali',
+            isAvailable: true,
+            timing: 'available now',
+            contact: '01687384982',
+        },
+        {
+            id: 6,
+            name: 'Mustapha salah',
+            isAvailable: true,
+            timing: 'available now',
+            contact: '01687323482',
+        },
+        {
+            id: 7,
+            name: 'Abduallah Mod',
+            isAvailable: false,
+            timing: '1:00 PM',
+            contact: '0168234232',
+        },
+        {
+            id: 8,
+            name: 'Qasam Sorror',
+            isAvailable: false,
+            timing: '5:00 PM',
+            contact: '0333234232',
+        },
+    ],
     products: [
         {
             id: 1,
@@ -12,7 +81,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 2,
@@ -24,7 +94,9 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+        tags: ['raw', 'packaged', 'halal', 'hot'],
+
         },
         {
             id: 3,
@@ -36,7 +108,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 4,
@@ -48,7 +121,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 5,
@@ -60,7 +134,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 6,
@@ -72,7 +147,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 7,
@@ -84,7 +160,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 8,
@@ -96,7 +173,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 9,
@@ -108,7 +186,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
         {
             id: 10,
@@ -123,7 +202,8 @@ export default ({
             isAddedToCart: false,
             isAddedBtn: false,
             isFavourite: false,
-            quantity: 1
+            quantity: 1,
+            tags: ['raw', 'packaged', 'halal', 'hot']
         },
     ],
     userInfo: {

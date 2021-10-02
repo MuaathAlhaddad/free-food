@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <img class="card-img-top" src="https://via.placeholder.com/250" alt="Placeholder image">
+        <img class="card-img-top" src="https://thesmartlocal.com/images/easyblog_articles/3016/localfoodkl-36.jpg" alt="Placeholder image">
 
         <div class="card-body ">
             <div class="row justify-content-between">
@@ -36,7 +36,9 @@
                 <p>{{ product.description }}</p>
             </div>
 
-                <h1 class="display-3 text-center"> RM {{ product.price }} </h1>
+                <div class="text-center">
+                    <span v-for="tag in product.tags" :key="tag.index" class="m-1 badge badge-pill" :class="badgeColors[random(badgeColors.length)]">{{ tag }}</span>
+                </div>
 
             <div class="row">
                 <div class="col">
@@ -97,10 +99,16 @@ export default {
     computed: {
         isUserLogged () {
             return this.$store.getters.isUserLoggedIn;
+        },
+        badgeColors () {
+            return this.$store.state.badgeColors;
         }
     },
 
     methods: {
+        random(max) {
+          return Math.floor(Math.random() * max);;
+        },
         addToCart (id) {
             let data = {
                 id: id,
