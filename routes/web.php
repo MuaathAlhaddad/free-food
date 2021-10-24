@@ -29,6 +29,7 @@ Auth::routes();
  *************************************************/
 Route::get('website/{id}', 'WebsiteController@website');
 Route::get('website', 'WebsiteController@website')->name('website');
+Route::get('checkout', 'WebsiteController@website')->name('checkout');
 
 
 /**************************************************

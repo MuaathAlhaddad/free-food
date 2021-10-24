@@ -1,5 +1,3 @@
-import store from '../store';
-
 export default {
     setPosts(state, response) {
         state.posts = response.data.data;
@@ -32,6 +30,14 @@ export default {
         state.products.filter(el => {
             el.isFavourite = false;
         });
+    },
+    removeDeliveredProductsFromList: state => {
+        state.products.filter(product => {
+                if (product.isAddedToCart) {
+                    product.status = 'Delivered'
+                }
+            }
+        );
     },
     isUserLoggedIn: (state, isUserLoggedIn) => {
         state.userInfo.isLoggedIn = isUserLoggedIn;

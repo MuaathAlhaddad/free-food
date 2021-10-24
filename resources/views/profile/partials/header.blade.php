@@ -6,7 +6,7 @@
         <div class="row {{ $rowClass ?? '' }}">
             @isset($website)
                 <div class="col-md-12 {{ $class ?? '' }}">
-                    <h1 class="display-2 text-white">Free Food</h1>
+                    <h1 class="display-2 text-white">Free Feed</h1>
 
                     <p class="text-white mt-0 mb-5">This system accepts nay kind of food, just need ot know some details concerning food type, like if it is cooked or raw, packaged, cold or hot, is it haram or halal, and so on.</p>
 {{--                    <img src="{{ asset('argon') }}/img/icons/common/logo.png" width="300" height="300">--}}

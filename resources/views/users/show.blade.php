@@ -23,7 +23,7 @@
                         <div class="col-lg-3 order-lg-2">
                             <div class="card-profile-image">
                                 <a href="#" id="img-link">
-                                    <img src="{{ $user->avatar ? asset("storage/avatars/$user->avatar") :  asset('storage/avatars/male_avatar.png') }}" class="rounded-circle" width="150" height="150" id="previewImg">
+                                    <img src="{{ $user->avatar ? asset("storage/avatars/$user->avatar") :  "https://image.shutterstock.com/image-vector/man-character-face-avatar-glasses-260nw-562077406.jpg" }}" class="rounded-circle" width="150" height="150" id="previewImg">
                                 </a>
                             </div>
                         </div>

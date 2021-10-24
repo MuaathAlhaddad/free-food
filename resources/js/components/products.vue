@@ -1,12 +1,28 @@
 <template>
-    <div>
-        <!--        Products    -->
-        <div class="row text-center  justify-content-around">
-            <div class="card col-sm-3 p-0 mt-3" v-for="product in products" :key="product.id">
-                <product :product="product"></product>
-            </div>
-            <div class="section" v-if="products.length === 0">
-                <p>{{ noProductLabel }}</p>
+    <div class="header pb-8 pt-2">
+        <div class="d-flex flex-row-reverse">
+
+            <router-link
+                v-show="(productsAdded.length > 0)"
+                class="btn btn-danger "
+                :to="{name: 'checkout'}">
+                Checkout
+            </router-link>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+
+                    <!--        Products    -->
+                    <div class="row text-center  justify-content-around">
+                        <div v-for="product in products" :key="product.id" class="card col-sm-3 p-0 mt-3">
+                            <product :product="product"></product>
+                        </div>
+                        <div v-if="products.length === 0" class="section">
+                            <p>{{ noProductLabel }}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -18,9 +34,9 @@ import Product from "./product";
 export default {
     name: "products",
 
-    components: { Product },
+    components: {Product},
 
-    data () {
+    data() {
         return {
             id: '',
             noProductLabel: 'No product found',
@@ -29,12 +45,15 @@ export default {
     },
 
     computed: {
-        products () {
+        products() {
             if (this.$store.state.userInfo.hasSearched) {
                 return this.getProductByTitle();
             } else {
-                return this.$store.state.products;
+                return this.$store.state.products.filter(product => product.status !== 'Delivered');
             }
+        },
+        productsAdded() {
+            return this.$store.getters.productsAdded;
         }
     },
 
