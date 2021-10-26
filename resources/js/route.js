@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router';
 import ResourceShow from "./pages/resource-show.vue";
-import ProductsIndex from "./pages/resource-index.vue";
+import ResourceIndex from "./pages/resource-index.vue";
 import Checkout from "./pages/checkout.vue";
 import Shipping from "./pages/shipping.vue";
 
@@ -14,8 +14,9 @@ export default new Router({
             routes: [
                 {
                     path: "/website",
-                    component: ProductsIndex,
-                    name: "products_index"
+                    component: ResourceIndex,
+                    name: "products_index",
+                    props: {role: false},
                 },
                 {
                     path: "/website/:id?",

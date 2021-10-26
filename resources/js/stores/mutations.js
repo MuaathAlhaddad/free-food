@@ -5,6 +5,9 @@ export default {
     setItems(state, response) {
         state.items = response.data.data;
     },
+    pushProduct(state, product) {
+        state.products.push(product);
+    },
     addToCart: (state, id) => {
         state.products.forEach(el => {
             if (id === el.id) {
