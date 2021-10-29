@@ -25,7 +25,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('css/dataTable.css') }}">
 
         {{--   Vuejs     --}}
-        <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/app.js') }}" ></script>
 
     </head>
     <body class="{{ $class ?? '' }}">
@@ -50,8 +50,6 @@
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <!-- MultiSelect -->
         <script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script>
-
-        </script>
         @stack('js')
         <!-- Argon JS -->
         <script src="{{ asset('argon') }}/js/argon.js?v=1.0.0"></script>
