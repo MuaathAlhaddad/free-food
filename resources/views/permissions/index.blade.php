@@ -88,7 +88,10 @@
                                                     <form action="{{ route('permissions.destroy', $permission->id) }}" method="POST" style="display: inline-block;">
                                                         <input type="hidden" name="_method" value="DELETE">
                                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                                        <i class="far fa-trash-alt text-danger delete-btn" style=" cursor: pointer;"></i>
+                                                        <button type="submit" class="btn btn-link">
+                                                            <i class="far fa-trash-alt text-danger delete-btn" style=" cursor: pointer;"></i>
+                                                        </button>
+
                                                     </form>
                                                 @endcan
 
