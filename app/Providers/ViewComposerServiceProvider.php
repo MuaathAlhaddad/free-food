@@ -25,12 +25,13 @@ class ViewComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $roleRepository = $this->app->make(RoleRepositoryInterface::class);
 
-        $roles = $roleRepository->getRolesView();
+        View::composer( 'auth.register', function ( $view ) {
+            $roleRepository = $this->app->make( RoleRepositoryInterface::class );
 
-        View::composer('auth.register', function ($view) use($roles) {
-           $view->with('roles', $roles);
-        });
+            $roles = $roleRepository->getRolesView();
+
+            $view->with( 'roles', $roles );
+        } );
     }
 }
