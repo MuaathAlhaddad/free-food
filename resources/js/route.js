@@ -4,6 +4,8 @@ import ResourceShow from "./pages/resource-show.vue";
 import ResourceIndex from "./pages/resource-index.vue";
 import Checkout from "./pages/checkout.vue";
 import Shipping from "./pages/shipping.vue";
+import ContactUs from "./pages/contact-us.vue";
+
 
 Vue.use(Router)
 
@@ -32,6 +34,11 @@ export default new Router({
                     path: "/shipping",
                     component: Shipping,
                     name: "shipping"
+                },
+                {
+                    path: "/contact_us",
+                    component: ContactUs,
+                    name: "contact_us"
                 },
             ],
 
